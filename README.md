@@ -1,6 +1,6 @@
 # Airflow ETL DAG Example
 
-This project demonstrates a simple ETL (Extract, Transform, Load) workflow using Apache Airflow. The workflow consists of three main tasks: `EXTRACT`, `TRANSFORM`, and `LOAD`, which are orchestrated using Airflow's Directed Acyclic Graph (DAG) capabilities.
+This project demonstrates a simple ETL (Extract, Transform, Load) workflow using Apache Airflow with xcoms. The workflow consists of three main tasks: `EXTRACT`, `TRANSFORM`, and `LOAD`, which are orchestrated using Airflow's Directed Acyclic Graph (DAG) capabilities.
 
 ## DAG Structure
 
