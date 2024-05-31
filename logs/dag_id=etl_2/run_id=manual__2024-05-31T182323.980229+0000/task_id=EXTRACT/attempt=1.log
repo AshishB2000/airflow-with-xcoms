@@ -1,0 +1,14 @@
+[2024-05-31T18:23:28.430+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_2.EXTRACT manual__2024-05-31T18:23:23.980229+00:00 [queued]>
+[2024-05-31T18:23:28.441+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_2.EXTRACT manual__2024-05-31T18:23:23.980229+00:00 [queued]>
+[2024-05-31T18:23:28.441+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-05-31T18:23:28.457+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): EXTRACT> on 2024-05-31 18:23:23.980229+00:00
+[2024-05-31T18:23:28.470+0000] {standard_task_runner.py:60} INFO - Started process 1357 to run task
+[2024-05-31T18:23:28.485+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_2', 'EXTRACT', 'manual__2024-05-31T18:23:23.980229+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmp36b25k99']
+[2024-05-31T18:23:28.506+0000] {standard_task_runner.py:88} INFO - Job 8: Subtask EXTRACT
+[2024-05-31T18:23:28.683+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_2.EXTRACT manual__2024-05-31T18:23:23.980229+00:00 [running]> on host 503e112b7b7d
+[2024-05-31T18:23:28.799+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='ashish' AIRFLOW_CTX_DAG_ID='etl_2' AIRFLOW_CTX_TASK_ID='EXTRACT' AIRFLOW_CTX_EXECUTION_DATE='2024-05-31T18:23:23.980229+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-31T18:23:23.980229+00:00'
+[2024-05-31T18:23:28.809+0000] {logging_mixin.py:188} INFO - this is extract function
+[2024-05-31T18:23:28.810+0000] {python.py:201} INFO - Done. Returned value was: this is demo ***
+[2024-05-31T18:23:28.873+0000] {taskinstance.py:1138} INFO - Marking task as SUCCESS. dag_id=etl_2, task_id=EXTRACT, execution_date=20240531T182323, start_date=20240531T182328, end_date=20240531T182328
+[2024-05-31T18:23:28.899+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-05-31T18:23:28.935+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check

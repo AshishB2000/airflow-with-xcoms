@@ -1,0 +1,26 @@
+[2024-05-31T18:36:05.341+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_2.TRANSFORM manual__2024-05-31T18:35:58.894901+00:00 [queued]>
+[2024-05-31T18:36:05.353+0000] {taskinstance.py:1956} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_2.TRANSFORM manual__2024-05-31T18:35:58.894901+00:00 [queued]>
+[2024-05-31T18:36:05.354+0000] {taskinstance.py:2170} INFO - Starting attempt 1 of 1
+[2024-05-31T18:36:05.373+0000] {taskinstance.py:2191} INFO - Executing <Task(PythonOperator): TRANSFORM> on 2024-05-31 18:35:58.894901+00:00
+[2024-05-31T18:36:05.388+0000] {standard_task_runner.py:60} INFO - Started process 1577 to run task
+[2024-05-31T18:36:05.407+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', 'etl_2', 'TRANSFORM', 'manual__2024-05-31T18:35:58.894901+00:00', '--job-id', '18', '--raw', '--subdir', 'DAGS_FOLDER/etl.py', '--cfg-path', '/tmp/tmpsbc9nch1']
+[2024-05-31T18:36:05.427+0000] {standard_task_runner.py:88} INFO - Job 18: Subtask TRANSFORM
+[2024-05-31T18:36:05.688+0000] {task_command.py:423} INFO - Running <TaskInstance: etl_2.TRANSFORM manual__2024-05-31T18:35:58.894901+00:00 [running]> on host 503e112b7b7d
+[2024-05-31T18:36:05.951+0000] {taskinstance.py:2480} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='ashish' AIRFLOW_CTX_DAG_ID='etl_2' AIRFLOW_CTX_TASK_ID='TRANSFORM' AIRFLOW_CTX_EXECUTION_DATE='2024-05-31T18:35:58.894901+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-05-31T18:35:58.894901+00:00'
+[2024-05-31T18:36:05.972+0000] {taskinstance.py:2698} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/taskinstance.py", line 433, in _execute_task
+    result = execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 199, in execute
+    return_value = self.execute_callable()
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/operators/python.py", line 216, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/opt/airflow/dags/etl.py", line 22, in transform_fun
+    print(f'the value of xcom is {xcom_pull_obj[1]}')
+  File "/home/airflow/.local/lib/python3.8/site-packages/airflow/models/xcom.py", line 795, in __getitem__
+    raise IndexError(key) from None
+IndexError: 1
+[2024-05-31T18:36:05.992+0000] {taskinstance.py:1138} INFO - Marking task as FAILED. dag_id=etl_2, task_id=TRANSFORM, execution_date=20240531T183558, start_date=20240531T183605, end_date=20240531T183605
+[2024-05-31T18:36:06.007+0000] {standard_task_runner.py:107} ERROR - Failed to execute job 18 for task TRANSFORM (1; 1577)
+[2024-05-31T18:36:06.035+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 1
+[2024-05-31T18:36:06.074+0000] {taskinstance.py:3280} INFO - 0 downstream tasks scheduled from follow-on schedule check
