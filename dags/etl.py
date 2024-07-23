@@ -16,6 +16,12 @@ def extract_fun():
     return_val = "this is demo airflow"
     return return_val
 
+# we can this too
+#def extract_data(ti):
+#data = {"key": "value"}
+#ti.xcom_push(key="data_key", value=data)
+
+
 def transform_fun(t1, ti):
     xcom_pull_obj = ti.xcom_pull(task_ids="EXTRACT")
     if xcom_pull_obj:
